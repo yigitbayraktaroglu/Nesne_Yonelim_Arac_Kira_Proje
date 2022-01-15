@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.projetaslaks.Controller">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane fx:id="root" prefHeight="316.0" prefWidth="302.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetaslaks.LoginPage">
+   <children>
+      <PasswordField fx:id="userPasswordField" layoutX="138.0" layoutY="61.0" />
+      <TextField fx:id="userIDField" layoutX="138.0" layoutY="28.0" />
+      <Label layoutX="26.0" layoutY="32.0" text="Telefon Numarası" />
+      <Label layoutX="96.0" layoutY="65.0" text="Şifre" />
+      <Button fx:id="loginButton" layoutX="225.0" layoutY="98.0" mnemonicParsing="false" onAction="#GirisYap" text="Giriş Yap" />
+      <Button fx:id="SigninButton" layoutX="236.0" layoutY="144.0" mnemonicParsing="false" onAction="#UyeOl" text="Üye Ol" />
+      <Label fx:id="feedback" layoutX="138.0" layoutY="101.0" prefHeight="18.0" prefWidth="41.0" />
+   </children>
+</AnchorPane>
