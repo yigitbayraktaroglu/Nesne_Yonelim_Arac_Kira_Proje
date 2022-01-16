@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -15,6 +17,7 @@ import java.util.Objects;
 
 public class LoginPage extends Iletisim{
     private static Musteri musteri;
+
         @FXML
         AnchorPane root;
         @FXML
@@ -82,23 +85,20 @@ public class LoginPage extends Iletisim{
                     rs1.getString("sifre"),
                     rs1.getString("telNo"),
                     AracSorgu(plaka));
-            System.out.println(rs1.getString("isim"));
-            System.out.println(musteri2.getIsim());
+
             setMusteri(musteri2);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+
         }
 
     }
     public static Musteri getMusteri(){
-        System.out.println("ss");
-        System.out.println(musteri.getIsim());
         return musteri;
 }
 
     public void setMusteri(Musteri musteri) {
         this.musteri = musteri;
-        System.out.println(musteri.getIsim());
+
     }
     public static Arac AracSorgu(String plaka){
             String sql1 = "SELECT * FROM araclar WHERE plaka= ?";
@@ -115,14 +115,11 @@ public class LoginPage extends Iletisim{
                     rs1.getString("marka"),
                     rs1.getString("model"));
             System.out.println(rs1.getString("plaka"));
-            System.out.println(arac.getMarka());
-            System.out.println(arac.getRenk());
             pstmt1.close();
             conn1.close();
-            System.out.println(arac.getPlaka());
             return arac;
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+
         }
     return null;}
 }
