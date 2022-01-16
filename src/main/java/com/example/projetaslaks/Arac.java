@@ -23,6 +23,14 @@ public class Arac {
         return plaka;
     }
 
+    public int getDurum() {
+        return durum;
+    }
+
+    public void setDurum(int durum) {
+        this.durum = durum;
+    }
+
     public void setPlaka(String plaka) {
         this.plaka = plaka;
     }

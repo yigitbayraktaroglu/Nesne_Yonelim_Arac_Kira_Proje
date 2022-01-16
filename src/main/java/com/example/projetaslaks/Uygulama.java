@@ -11,8 +11,9 @@ public class Uygulama extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Uygulama.class.getResource("view.fxml"));
+
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        stage.setTitle("Araç Kiralama ");
         stage.setScene(scene);
         stage.show();
 

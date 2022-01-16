@@ -6,7 +6,7 @@ import java.util.List;
 public class Iletisim {
 
 
-public static Connection Connect()  {
+    public static Connection Connect()  {
     Connection conn=null;
     try{
     String url="jdbc:sqlite:database.sqlite";
@@ -29,6 +29,8 @@ public static Connection Connect()  {
             aracList.add(arac);
 
         }
+            stmt.close();
+            conn.close();
     }
         catch (SQLException e){
             System.out.println(e.getMessage());
@@ -42,10 +44,15 @@ public static Connection Connect()  {
             Statement stmt=conn.createStatement();
             ResultSet rs =stmt.executeQuery(sql))
         {while (rs.next()){
-            Musteri musteri=new Musteri(rs.getString("isim"), rs.getString("soyisim"), rs.getString("tcNo"), rs.getString("sifre"), rs.getString("telNo") );
+
+            Musteri musteri=new Musteri(rs.getString("isim"), rs.getString("soyisim"),
+                    rs.getString("tcNo"), rs.getString("sifre"),
+                    rs.getString("telNo"), LoginPage.AracSorgu(rs.getString(5)));
             musteriList.add(musteri);
 
         }
+            stmt.close();
+            conn.close();
         }
         catch (SQLException e){
             System.out.println(e.getMessage());

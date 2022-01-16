@@ -8,14 +8,20 @@ public class Musteri {
     private String sifre;
     private Arac arac ;
 
-    public Musteri(String isim, String soyisim, String tcNo, String sifre,String telNo ) {
+    public Musteri(String isim, String soyisim, String tcNo, String sifre,String telNo,Arac arac ) {
         this.isim = isim;
         this.soyisim = soyisim;
         this.tcNo = tcNo;
         this.sifre = sifre;
         this.telNo=telNo;
+        this.arac=arac;
 
     }
+
+    public Musteri() {
+
+    }
+
 
     public String getTelNo() {
         return telNo;
@@ -64,4 +70,6 @@ public class Musteri {
     public void setArac(Arac arac) {
         this.arac = arac;
     }
+
+
 }
