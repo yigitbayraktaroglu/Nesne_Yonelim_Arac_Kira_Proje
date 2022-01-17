@@ -27,7 +27,6 @@ public class Iletisim {
         {while (rs.next()){
             Arac arac=new Arac(rs.getInt("durum"), rs.getString("plaka"),rs.getString("vites"),rs.getInt("km"),rs.getString("renk"),rs.getString("marka"),rs.getString("model"));
             aracList.add(arac);
-
         }
             stmt.close();
             conn.close();

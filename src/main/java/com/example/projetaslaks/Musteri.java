@@ -15,7 +15,6 @@ public class Musteri {
         this.sifre = sifre;
         this.telNo=telNo;
         this.arac=arac;
-
     }
 
     public Musteri() {
